@@ -1,0 +1,174 @@
+/* Standard Styles */
+
+/* Media Styles */
+/* Default Sizes and stuff */
+@media screen {
+    body {
+        background-color: #696969;
+        margin: 20px;
+    }
+
+    header {
+        border: 2px solid black;
+        background-color: #f8f8ff;
+        color: #232323;
+        margin: 0 0 10px 0;
+        padding: 0 10px;
+
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+    }
+
+    header > h1 {
+        border-bottom: 2px solid black;
+        margin-bottom: 0;
+    }
+
+    header > h3 {
+        margin-top: 0;
+        text-indent: 1.5em;
+    }
+
+    header > div#links {
+        text-align: right;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .notImplemented{
+        text-decoration: line-through;
+    }
+    header > div#links > a {
+
+    }
+
+    header > div#links > a:link, header > div#links > a:visited, header > div#links > a:active {
+        color: #232323;
+        font-style: italic;
+    }
+
+    header > div#links > a:hover {
+        font-weight: bold;
+    }
+
+    #container {
+        width: 400px;
+        height: 200px;
+
+        margin-left: 20px;
+
+    }
+
+    #pageWrapper {
+        border: 2px solid black;
+        background-color: #f8f8ff;
+
+        margin: 10px auto;
+        padding: 10px;
+
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+
+    }
+
+    #userSummary {
+        margin: 0 0 10px 0;
+    }
+
+    #userStats {
+        text-indent: 1.5em;
+    }
+
+    .greenText {
+        color: green;
+    }
+
+    .redText {
+        color: red;
+    }
+
+    #weightTable{
+        float: left;
+        width: 40%;
+    }
+
+    #weightTable > table {
+        border-collapse: collapse;
+        width: 100%
+    }
+
+    #weightTable thead {
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+
+    }
+
+    td, th {
+        padding: 0 10px;
+    }
+
+    #weightTable tbody tr:nth-child(even) {
+        background-color: #d3d3d3;
+    }
+
+    #weightTable > fieldset{
+        margin: 10px 0 0 0;
+    }
+    #weightTable > fieldset > div{
+        display: inline;
+    }
+
+    .greeting {
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+
+    #userInfo {
+        margin: 0 0 10px 0;
+    }
+
+    #container {
+        width: 450px;
+        height: 225px;
+
+        margin-left: 20px;
+        float: right;
+    }
+    footer {
+        border-top: 1px solid black;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1350px){}
+
+@media screen and (max-width: 1200px) {
+    #weightTable > fieldset > div{
+        display: block;
+    }
+    #weightTable > fieldset > div > label{
+        width: 50px;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 1024px){}
+
+@media screen and (max-width: 860px) {
+    #weightTable{
+        width: 100%;
+        float: none;
+    }
+    #container{
+        margin: 10px auto ;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #container{
+        width: 250px;
+        height: 125px;
+    }
+}

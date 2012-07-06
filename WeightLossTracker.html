@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Weight Loss Tracker</title>
+    <!--TODO: fix issue #1 https://github.com/zymosisus/WebUIMocks/issues/1-->
+    <!--[if lt IE 9]>
+    <script language="javascript" type="text/javascript" src="./lib/excanvas.min.js"></script><![endif]-->
+
+    <script type="text/javascript" src="./lib/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./lib/jquery-ui-1.8.21.custom.min.js"></script>
+    <script type="text/javascript" src="./lib/underscore-min.js"></script>
+
+    <script type="text/javascript" src="./lib/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="./lib/jqplot.dateAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="./lib/jqplot.canvasTextRenderer.min.js"></script>
+    <script type="text/javascript" src="./lib/jqplot.canvasAxisTickRenderer.min.js"></script>
+
+    <script type="text/javascript" src="./src/NameSpacer-Custom.js"></script>
+    <script type="text/javascript" src="./src/UsersRepository.js"></script>
+    <script type="text/javascript" src="./src/weightLossTracker.js"></script>
+
+    <link href="./styles/weightLossTracker.css" rel="stylesheet" type="text/css"/>
+    <link href="./styles/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header>
+    <h1>TheDrew.org</h1>
+
+    <div id="links">
+        <a href="#" id="changeUser">Change user</a> | <span class="notImplemented">Edit Users</span> | <span
+            class="notImplemented">Help</span>
+        <!--<a href="#">Edit Users</a> | <a href="#">Help</a>-->
+    </div>
+    <h3>Weight Loss Tracker</h3>
+    <input type="hidden" id="userIndex">
+
+    <p>Welcome to theDrew's weight loss tracker. This page will track your weight from your starting
+        point and graph your progress. All data is saved locally in your web browser, nothing is passed over the
+        internet so be truthful when putting in your information. Though because all data is saved in the web browser,
+        the information is not portable, you must use the same computer / browser to view your data all times or you
+        will have to create a new user in each browser that you use.</p>
+    <p>This is just a beginning of a full application. there's still a good number of items that I need to work on
+        before I can consider myself done, like:</p>
+    <ul>
+        <li>The 'Edit Users' option up there</li>
+        <li>The 'Help' Option up there</li>
+        <li>I ask you your "Goal Weight" but then never do anything with it.</li>
+        <li>Purely a technical item, but I really should create some Jasmine Unit Test for all the JavaScript that
+            I use
+        </li>
+        <li>I did media queries for different screen sizes, but it would be really nice if the chart changed sizes
+            when screen did. [I'm using JQPlot for the charting and this might be a limitation of the tool I'm using,
+            But I'll do some more research.]
+        </li>
+        <li>Over all the look is nice, but not the 'great' look and feel that I'm going for.</li>
+        <li>I was originally planning on including more data such as BMI and Body Fat that you could optionally
+            track, but it was left out of the first version.
+        </li>
+        <li>I need to work on a better UI for the "Weigh In" entry. It just looks kinda sad down there.</li>
+    </ul>
+    If there is anything else that think I missed or that which could be better, please drop me a note and let me
+    know. Thanks.
+
+</header>
+
+
+<div id="pageWrapper">
+
+    <div id="userSummary">
+        <span class="greeting">
+            Hello: <span id="userNameTitle"></span>
+        </span>
+
+        <div id="userStats">
+            <div class="stat">Your Starting Weight: <span id="startingWeight"></span></div>
+            <div class="stat">Your Current Weight: <span id="currentWeight"></span></div>
+            <div class="stat">Your Total Change: <span id="delta"></span></div>
+        </div>
+
+
+    </div>
+
+
+    <div id="weightTable">
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Weekly Change</th>
+                <!--<th>BMI</th>
+                <th>Body Fat %</th>-->
+            </tr>
+            </thead>
+            <tbody id="weighIns">
+            </tbody>
+        </table>
+        <fieldset>
+            <legend>Add Weigh In</legend>
+            <div>
+                <label for='weighInDate'>Date</label>
+                <input type="text" id="weighInDate" class="datePicker"/>
+            </div>
+            <div>
+                <label for="weighInWeight">Weight</label>
+                <input type="text" id="weighInWeight"/>
+            </div>
+            <input type="button" id="addWeighIn" value="Add Entry"/>
+        </fieldset>
+
+
+    </div>
+
+    <div id="container"></div>
+    <div style="clear: both;"></div>
+    <script type="text/html" id="weighInRow">
+        <tr>
+            <td><%=weighInDate%></td>
+            <td><%=weighInWeight%></td>
+            <td><%=weighInChange%></td>
+        </tr>
+    </script>
+</div>
+
+<footer>
+    Created By: thedrew.org
+</footer>
+
+</body>
+</html>
