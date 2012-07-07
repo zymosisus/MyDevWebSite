@@ -15,8 +15,8 @@ THEDREWORG.UserRepository = (function () {
 
 		this.getUserList = function () {
 			/// Returns a JSON of user names and user ids
-			var users = JSON.parse(localStorage.getItem('users')),
-				userLen = users.length, i, userList = new Array();
+			var users = JSON.parse(localStorage.getItem('users'))
+				, userLen = users.length, i, userList = new Array();
 			for (i = 0; i < userLen; i++) {
 				userList[i] = {};
 				userList[i].userIndex = i;
@@ -44,7 +44,7 @@ THEDREWORG.UserRepository = (function () {
             ///TODO: Unit test this method
 			var users = JSON.parse(localStorage.getItem('users')) || new Array()
 				,user = users[userId];
-			user.weighIns[user.weighIns.length] = weighIn;
+			user.weighIns.push(weighIn);
 			localStorage.setItem('users', JSON.stringify(users));
 		};
 

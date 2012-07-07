@@ -1,0 +1,8 @@
+load:
+  - lib/jasmine-1.2.0/jasmine.js
+  - lib/jasmine-1.2.0/JasmineAdapter.js
+  - src/NameSpacer-Custom.js
+  - src/UsersRepository.js
+
+test:
+  - Tests/UserRepositorySpecs.js

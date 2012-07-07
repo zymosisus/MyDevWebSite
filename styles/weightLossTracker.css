@@ -172,3 +172,11 @@
         height: 125px;
     }
 }
+
+/* Smaller than 560 */
+@media screen and (max-width: 480px) {
+    /* disable webkit text size adjust (for iPhone) */
+    html {
+        -webkit-text-size-adjust: none;
+    }
+}
