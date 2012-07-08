@@ -35,9 +35,11 @@
         border-top: 1px solid black;
         border-bottom: 1px solid black;
     }
-    .notImplemented{
+
+    .notImplemented {
         text-decoration: line-through;
     }
+
     header > div#links > a {
 
     }
@@ -88,7 +90,7 @@
         color: red;
     }
 
-    #weightTable{
+    #weightTable {
         float: left;
         width: 40%;
     }
@@ -112,10 +114,11 @@
         background-color: #d3d3d3;
     }
 
-    #weightTable > fieldset{
+    #weightTable > fieldset {
         margin: 10px 0 0 0;
     }
-    #weightTable > fieldset > div{
+
+    .fieldGroup {
         display: inline;
     }
 
@@ -135,39 +138,49 @@
         margin-left: 20px;
         float: right;
     }
+
     footer {
         border-top: 1px solid black;
         margin: auto;
     }
+
+    .inputError {
+        border: 1px solid red;
+        background-color: #ffffaa;
+    }
 }
 
-@media screen and (max-width: 1350px){}
+@media screen and (max-width: 1350px) {
+}
 
 @media screen and (max-width: 1200px) {
-    #weightTable > fieldset > div{
+    .fieldGroup {
         display: block;
     }
-    #weightTable > fieldset > div > label{
+
+    .fieldGroup > label {
         width: 50px;
         float: left;
     }
 }
 
-@media screen and (max-width: 1024px){}
+@media screen and (max-width: 1024px) {
+}
 
 @media screen and (max-width: 860px) {
-    #weightTable{
+    #weightTable {
         width: 100%;
         float: none;
     }
-    #container{
-        margin: 10px auto ;
+
+    #container {
+        margin: 10px auto;
         float: none;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #container{
+    #container {
         width: 250px;
         height: 125px;
     }
@@ -177,6 +190,23 @@
 @media screen and (max-width: 480px) {
     /* disable webkit text size adjust (for iPhone) */
     html {
-        -webkit-text-size-adjust: none;
+
     }
+}
+
+
+/*iPhone 4+ Media Query Screen resolution 960x640 and device-pixel-ratio : 1.5 and orientation Portrait*/
+
+@media screen
+    and (max-width: 961px)
+    and (-webkit-min-device-pixel-ratio : 1.5)
+    and (orientation : portrait) {
+
+}
+
+@media screen
+and (max-width: 961px)
+and (-webkit-min-device-pixel-ratio : 1.5)
+and (orientation : landscape) {
+
 }

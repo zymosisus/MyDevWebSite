@@ -2,9 +2,8 @@
 <html>
 <head>
     <title>Weight Loss Tracker</title>
-    <!--TODO: fix issue #1 https://github.com/zymosisus/WebUIMocks/issues/1-->
-    <!--[if lt IE 9]>
-    <script language="javascript" type="text/javascript" src="./lib/excanvas.min.js"></script><![endif]-->
+	<!--[if lt IE 9]>
+	<script language="javascript" type="text/javascript" src="./lib/excanvas.min.js"></script><![endif]-->
 
     <script type="text/javascript" src="./lib/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./lib/jquery-ui-1.8.21.custom.min.js"></script>
@@ -45,9 +44,6 @@
         <li>The 'Edit Users' option up there</li>
         <li>The 'Help' Option up there</li>
         <li>I ask you your "Goal Weight" but then never do anything with it.</li>
-        <li>Purely a technical item, but I really should create some Jasmine Unit Test for all the JavaScript that
-            I use
-        </li>
         <li>I did media queries for different screen sizes, but it would be really nice if the chart changed sizes
             when screen did. [I'm using JQPlot for the charting and this might be a limitation of the tool I'm using,
             But I'll do some more research.]
@@ -58,7 +54,7 @@
         </li>
         <li>I need to work on a better UI for the "Weigh In" entry. It just looks kinda sad down there.</li>
     </ul>
-    If there is anything else that think I missed or that which could be better, please drop me a note and let me
+    If there is anything else that you think I missed or that which could be better, please drop me a note and let me
     know. Thanks.
 
 </header>
@@ -70,17 +66,12 @@
         <span class="greeting">
             Hello: <span id="userNameTitle"></span>
         </span>
-
         <div id="userStats">
             <div class="stat">Your Starting Weight: <span id="startingWeight"></span></div>
             <div class="stat">Your Current Weight: <span id="currentWeight"></span></div>
             <div class="stat">Your Total Change: <span id="delta"></span></div>
         </div>
-
-
     </div>
-
-
     <div id="weightTable">
         <table>
             <thead>
@@ -97,20 +88,18 @@
         </table>
         <fieldset>
             <legend>Add Weigh In</legend>
-            <div>
+			<div id="inputErrorMessage" class="redText"></div>
+            <div class="fieldGroup">
                 <label for='weighInDate'>Date</label>
                 <input type="text" id="weighInDate" class="datePicker"/>
             </div>
-            <div>
+            <div class="fieldGroup">
                 <label for="weighInWeight">Weight</label>
                 <input type="text" id="weighInWeight"/>
             </div>
             <input type="button" id="addWeighIn" value="Add Entry"/>
         </fieldset>
-
-
     </div>
-
     <div id="container"></div>
     <div style="clear: both;"></div>
     <script type="text/html" id="weighInRow">
@@ -121,10 +110,22 @@
         </tr>
     </script>
 </div>
-
 <footer>
-    Created By: thedrew.org
+    Created By: theDrew.org
 </footer>
+<script type="text/javascript">
 
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-31313159-1']);
+	_gaq.push(['_setDomainName', 'thedrew.org']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
 </body>
 </html>
